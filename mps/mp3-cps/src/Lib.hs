@@ -11,6 +11,12 @@ import Data.Functor.Identity (Identity)
 import Text.ParserCombinators.Parsec hiding (Parser)
 import Text.Parsec.Prim (ParsecT)
 
+--- Metadata for autograder
+--- -----------------------
+tag1 = 36392
+tag2 = 13977
+tag3 = 68529
+
 --- The Types
 --- ---------
 

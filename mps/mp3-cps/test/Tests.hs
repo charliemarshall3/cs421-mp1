@@ -11,7 +11,8 @@ import Lib
 import Parse
 
 allTests :: [([Bool], String)]
-allTests = [ (tests_factk, "factk tests")
+allTests = [ (tests_tags, "tags")
+           , (tests_factk, "factk tests")
            , (tests_evenoddk, "evenoddk tests")
            , (tests_isSimple, "isSimple tests")
            , (tests_cpsExp_intVar, "cpsExp: Integer and Variable expressions")
@@ -30,6 +31,11 @@ allTests = [ (tests_factk, "factk tests")
 
 --- Manual Translation
 --- ------------------
+
+tests_tags :: [Bool]
+tests_tags = [ tag1 < 100000
+             , tag2 < 100000
+             , tag3 < 100000 ]
 
 --- ### `factk :: Integer -> (Integer -> t) -> t`
 
