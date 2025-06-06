@@ -27,17 +27,31 @@ import qualified Prelude as P
 --- ### mytake
 
 -- don't forget to put the type declaration or you will lose points!
-mytake = undefined
+mytake :: Int -> [a] -> [a]
+mytake _ [] = []
+mytake n _ | n <= 0 = []
+mytake n (x:xs) = x : mytake (n-1) xs
 
 --- ### mydrop
-
+-- Write a function mydrop :: Int -> [a] -> [a] which drops the first n elements of a list, 
+-- or the whole list if there are not n elements. It should behave exactly like the Haskell built-in
 -- don't forget to put the type declaration or you will lose points!
-mydrop = undefined
+mydrop :: Int -> [a] -> [a]
+mydrop _ [] = []
+mydrop n xs | n <= 0 = xs
+mydrop n (_:xs) = mydrop (n-1) xs
 
 --- ### rev
-
+-- Write a function rev :: [a] -> [a] which reverses the input list. 
+-- To get credit, your solution must run in linear time. 
+-- If you use the (++) list append operator, chances are your solution is running in quadratic time. 
+-- This function should behave exactly like the Haskell built-in reverse :: [a] -> [a].
 -- don't forget to put the type declaration or you will lose points!
-rev = undefined
+rev :: [a] -> [a]
+rev xs = reverser xs []
+  where
+    reverser [] acc = acc
+    reverser (x:xs) acc = reverser xs (x:acc)
 
 --- ### app
 
